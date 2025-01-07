@@ -19,10 +19,10 @@
 }
 
 #' @title binary transform
-#' @description Converts any variable with two possible values to a {0,1} binary
+#' @description Converts any variable with two possible values to a \{0,1\} binary
 #' variable.
 #' @param x A variable with two possible values.
-#' @return A vector with values in {0,1}.
+#' @return A vector with values in \{0,1\}.
 #' @examples
 #' ## Convert a variable that takes values 'A' and 'B' to 0 and 1
 #' x <- sample( c('A','B'), size = 10, prob = c(0.5,0.5), replace = TRUE )
@@ -31,7 +31,7 @@
 #' @export
 binary_transform <- function( x ){
 
-  # If x is already a {0,1} variable do nothing
+  # If x is already a \{0,1\} variable do nothing
   if( any( x %nin% c(0,1) ) ){
     
     xnum <- as.numeric( as.factor(x) ) - 1

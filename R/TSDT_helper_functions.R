@@ -1131,7 +1131,7 @@ flatten_parameters <- function( parameters ){
   
   for( p1 in 1:length(parameters) ){
     
-    if( class(parameters[[p1]] ) != 'list' ){
+    if( !is(parameters[[p1]], 'list') ){
       PARAMETERS <- unlist( c( PARAMETERS, parameters[p1] ) )
     }else{
       
@@ -1162,7 +1162,7 @@ flatten_parameters <- function( parameters ){
 equal <- function( x, y, verbose = FALSE ){
 
   # Confirm both objects are of class TSDT
-  if( class(x) != "TSDT" || class(y) != "TSDT" )
+  if( !is(x, "TSDT") || !is(y,"TSDT") )
       stop( "ERROR: both objects must be of class TSDT" )
 
   ## Confirm equivalence of object dimensions

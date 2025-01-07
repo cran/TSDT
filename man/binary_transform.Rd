@@ -10,10 +10,10 @@ binary_transform(x)
 \item{x}{A variable with two possible values.}
 }
 \value{
-A vector with values in {0,1}.
+A vector with values in \{0,1\}.
 }
 \description{
-Converts any variable with two possible values to a {0,1} binary
+Converts any variable with two possible values to a \{0,1\} binary
 variable.
 }
 \examples{

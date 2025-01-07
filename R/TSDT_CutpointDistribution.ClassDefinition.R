@@ -29,7 +29,7 @@ setClass( "TSDT_CutpointDistribution",
 setMethod( f = "initialize", signature =  "TSDT_CutpointDistribution",
           definition = function(.Object, Cutpoints = NULL ){
             requireNamespace( "hash", quietly = TRUE )
-            if( is.null( Cutpoints ) || class( Cutpoints ) != 'hash' ){
+            if( is.null( Cutpoints ) || !is(Cutpoints, 'hash') ){
               .Object@Cutpoints = hash()
             }else{
               .Object@Cutpoints = Cutpoints

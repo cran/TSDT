@@ -286,7 +286,7 @@ get_competitors <- function( splits,
     ## Remove VARIABLES_TO_EXCLUDE from covariates and tree_builder_parameters$cost
     INDICES_TO_KEEP <- which( names( covariates ) %nin% VARIABLES_TO_EXCLUDE )
     covariates <- subset( covariates, select = names( covariates )[INDICES_TO_KEEP] )
-    if( class( covariates ) != 'data.frame' )
+    if( !is(covariates, 'data.frame') )
         stop( 'ERROR: covariates is not a data.frame\n' )
     if( NCOL( covariates ) == 0 )
         stop( 'ERROR: covariates has no columns\n' )

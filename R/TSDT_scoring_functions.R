@@ -412,7 +412,7 @@ survival_time_quantile <- function( data,
   # get_y(). Cast it back to Surv by wrapping the return value in Surv().
   response <- get_y( data, scoring_function_parameters )
   
-  if( class( response ) != "Surv" )
+  if( !is(response, "Surv") )
       response <- survival::Surv( response )
   
   trt <- get_trt( data, scoring_function_parameters )
@@ -450,7 +450,7 @@ survival_time_quantile <- function( data,
     
     survival_time_quantile <- NA
     
-    if( class( quantile__ ) != "logical" ){
+    if( !is(quantile__, "logical") ){
       
       if( is( quantile__, "numeric" ) ){
         survival_time_quantile <- quantile__
@@ -561,8 +561,7 @@ diff_survival_time_quantile <- function( data,
 #' @references
 #' Therneau, T.M.,  Grambsch, P.M., and Fleming, T.R. (1990).  Martingale-based
 #' residuals for survival models.  Biometrika, 77(1), 147-160.
-#' doi:10.1093/biomet/77.1.147.
-#' \url{https://academic.oup.com/biomet/article/77/1/147/271076}
+#' \doi{10.1093/biomet/77.1.147}
 #' @export
 mean_deviance_residuals <- function( data,
                                      scoring_function_parameters = NULL ){
@@ -597,7 +596,7 @@ mean_deviance_residuals <- function( data,
   # The class of response is changed from Surv to matrix when retrieved with
   # get_y(). Cast it back to Surv by wrapping the return value in Surv().
   response <- get_y( data, scoring_function_parameters )
-  if( class( response ) != "Surv" )
+  if( !is(response,"Surv") )
       response <- survival::Surv( response )
   
   trt <- get_trt( data, scoring_function_parameters )
@@ -718,7 +717,7 @@ diff_restricted_mean_survival_time <- function( data,
   # get_y(). Cast it back to Surv by wrapping the return value in Surv().
   response <- get_y( data, scoring_function_parameters )
   
-  if( class( response ) != "Surv" )
+  if( !is(response, "Surv") )
       response <- survival::Surv( response )
   
   # Get treatment variable and control and experimental treatment values
@@ -758,7 +757,7 @@ hazard_ratio <- function( data,
   # get_y(). Cast it back to Surv by wrapping the return value in Surv().
   response <- get_y( data, scoring_function_parameters )
   
-  if( class( response ) != "Surv" )
+  if( !is(response, "Surv") )
       response <- survival::Surv( response )
   
   # Get treatment variable and control and experimental treatment values

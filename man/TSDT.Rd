@@ -29,7 +29,7 @@ TSDT(
   min_subgroup_n_trt = NULL,
   min_subgroup_n_oob_control = NULL,
   min_subgroup_n_oob_trt = NULL,
-  maxdepth = .Machine$integer.max,
+  maxdepth = 30,
   rootcompete = 0,
   competedepth = 1,
   strength_cutpoints = c(0.1, 0.2, 0.3),
